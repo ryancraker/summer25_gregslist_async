@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class House {
   constructor(data) {
     this.bedrooms = data.bedrooms
@@ -24,10 +26,11 @@ export class House {
             <span class="house-price p-1">$${this.price}</span>
             <b class="fs-2">${this.description}</b>
             <p>${this.year}</p>
-            <div>
-              <p>${this.bedrooms} bedrooms</p>
-              <p>${this.bathrooms} bathrooms</p>
-              <p>${this.levels} levels</p>
+            <p class="display-inline-block">${this.bedrooms} bedrooms</p>
+            <p class="display-inline-block">${this.bathrooms} bathrooms</p>
+            <div class="d-flex justify-content-between">
+              <p class="display-inline">${this.levels} levels</p>
+              ${this.deleteButton}
             </div>
             <hr>
             <div class="d-flex justify-content-between align-items-end">
@@ -40,5 +43,21 @@ export class House {
           </div>
         </div>
         `
+  }
+
+  get deleteButton() {
+    const identity = AppState.identity
+
+    if (identity == null) {
+      return ''
+    }
+
+    if (identity.id != this.creatorId) {
+      return ''
+    }
+
+    return `
+      <button class="btn btn-outline-danger" type="button" onclick="app.housesController.confirmDeleteHouse('${this.id}')">DELETE</button>
+      `
   }
 }
