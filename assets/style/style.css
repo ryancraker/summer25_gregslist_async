@@ -57,4 +57,9 @@ main {
 .house-card {
   border: double thick;
   box-shadow: 0px 5px 7px;
+  min-height: 40dvh;
+}
+
+textarea {
+  resize: none;
 }

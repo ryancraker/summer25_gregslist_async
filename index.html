@@ -24,9 +24,45 @@
 
   <main>
     <!-- TODO add houses stuff here! -->
-    <div class="container">
+    <section class="container">
       <div class="row">
         <div class="col-md-6">
+          <form onsubmit="app.houseController.submitHouse()">
+            <div class="mb-3">
+              <label for="house-year" class="form-label">Construction year</label>
+              <input type="number" class="form-control" id="house-year" placeholder="Constructed..." required
+                name="year" min="1000" max="2030">
+              <div class="mb-3">
+                <label for="price" class="form-label">price</label>
+                <input type="number" class="form-control" id="price" placeholder="price..." required name="price"
+                  min="0" max="1000000000">
+                <div class="mb-3">
+                  <label for="bedrooms" class="form-label">Bedrooms</label>
+                  <input type="number" class="form-control" id="bedrooms" placeholder="bedrooms..." required
+                    name="bedrooms" min="0" max="1000">
+                  <div class="mb-3">
+                    <label for="bathrooms" class="form-label">Bathrooms</label>
+                    <input type="text" class="form-control" id="bathrooms" placeholder="bathrooms..." required
+                      name="bathrooms" min="0" max="1000">
+                    <div class="mb-3">
+                      <label for="levels" class="form-label">Levels</label>
+                      <input type="text" class="form-control" id="levels" placeholder="Levels..." required name="levels"
+                        min="0" max="1000">
+                      <div class="mb-3">
+                        <label for="house-img-url" class="form-label">House Picture URL</label>
+                        <input type="url" class="form-control" id="house-img-url" placeholder="URL..." maxlength="500"
+                          name="imgUrl">
+                      </div>
+                      <div class="mb-3">
+                        <label for="house-description" class="form-label">House Description</label>
+                        <textarea class="form-control" id="house-description" rows="3" name="description"
+                          maxlength="5000"></textarea>
+                      </div>
+                    </div>
+    </section>
+    <section class="container">
+      <div class="row" id="house-listings">
+        <!-- <div class="col-md-6">
           <div class="house-card position-relative p-1">
             <img class="house-img"
               src="https://images.unsplash.com/photo-1574197130333-0f151ed5d361?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2VpcmQlMjBob3VzZXN8ZW58MHx8MHx8fDA%3D"
@@ -50,9 +86,9 @@
               <span>listed on </span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-    </div>
+    </section>
 
 
     <section class="container">
